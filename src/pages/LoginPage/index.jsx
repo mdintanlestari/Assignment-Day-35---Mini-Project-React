@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import image from "../../assets/img/register/image1.jpg";
 
 function LoginPage() {
   const [username, setUsername] = useState("");
@@ -8,9 +10,11 @@ function LoginPage() {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
+  const isButtonValid = username.trim() !== "" && password.trim() !== "";
+
   const Navigate = useNavigate();
 
-  const handleChageUsername = (e) => {
+  const handleChangeUsername = (e) => {
     setUsername(e.target.value);
   };
 
@@ -19,6 +23,7 @@ function LoginPage() {
   };
 
   const handleLogin = async (e) => {
+    e.preventDefault();
     const payload = {
       email: username,
       password: password,
@@ -35,61 +40,94 @@ function LoginPage() {
       );
       console.log(response);
       setSuccess("Login Success!!");
+      console.log("Token yang disimpan:", response.data.token);
       localStorage.setItem("token", response.data.token);
+
+      setTimeout(() => {
+        Navigate("/listuser");
+      }, 2000);
     } catch (error) {
       console.log(error.response);
       setError(error.response.data.error);
     }
   };
-
   return (
-    <div className="flex items-center justify-center w-screen h-screen bg-gray-200">
-      <div className="w-full h-full px-10 text-white bg-blue-300 rounded shadow-md md:max-w-md lg:w-1/3 md:h-[450px]">
-        <h2 className="mt-10 mb-4 text-3xl font-medium text-center">Login</h2>
-        {success && (
-          <p className="text-xl font-semibold text-green-700">{success}</p>
-        )}
-        {error && !success.length && (
-          <p className="text-xl font-semibold text-red-600">{error}</p>
-        )}
-        <label className="block mb-3" htmlFor="username">
-          Email:
-        </label>
-        <input
-          className="w-full px-3 py-3 text-black border-solid-1"
-          onChange={handleChageUsername}
-          type="text"
-          name="text"
-          placeholder="username"
-        />
-        <label className="block mt-3 mb-3" htmlFor="password">
-          Password:
-        </label>
-        <input
-          className="block w-full px-3 py-3 text-black border-solid-1 mb-7"
-          onChange={handleChangePassword}
-          type="password"
-          name="password"
-          placeholder="password"
-        />
-        <button
-          onClick={handleLogin}
-          className="py-3 font-bold text-center text-blue-300 bg-white rounded px-7 hover:bg-blue-700"
-        >
-          Login
-        </button>
-        <p className="mt-6 text-lg">
-          Don't have account?
-          <a
-            className="font-medium text-blue-600 hover:underline hover:text-blue-900"
-            href=""
+    <div className="flex items-center justify-center min-h-screen px-4 bg-gradient-to-b from-gray-900 to-indigo-950 font-poppins">
+      <div className="grid w-full max-w-6xl overflow-hidden bg-white rounded-md shadow-lg md:grid-cols-2">
+        {/* Left: Image + Welcome */}
+        <div className="relative flex items-center justify-center bg-black">
+          <img
+            src={image}
+            alt="Login"
+            className="w-full h-full object-cover md:max-h-[500px]"
+          />
+          <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center text-white bg-black bg-opacity-50">
+            <h1 className="mb-2 text-4xl font-bold">Welcome Back!</h1>
+            <p className="text-lg">
+              Login to access all features of this React portfolio app.
+            </p>
+          </div>
+        </div>
+
+        {/* Right: Login Form */}
+        <div className="flex flex-col justify-center px-6 py-10 md:px-10">
+          <h2 className="mb-6 text-3xl font-medium text-center text-black">
+            Login
+          </h2>
+
+          {success && (
+            <p className="mb-2 text-lg font-semibold text-green-700">
+              {success}
+            </p>
+          )}
+          {error && !success.length && (
+            <p className="mb-2 text-lg font-semibold text-red-600">{error}</p>
+          )}
+
+          <label htmlFor="username" className="block mb-2 text-black">
+            Email:
+          </label>
+          <input
+            value={username}
+            onChange={handleChangeUsername}
+            className="w-full px-3 py-2 mb-4 text-black border border-black rounded"
+            type="text"
+            name="username"
+            placeholder="email"
+          />
+
+          <label htmlFor="password" className="block mb-2 text-black">
+            Password:
+          </label>
+          <input
+            value={password}
+            onChange={handleChangePassword}
+            className="w-full px-3 py-2 mb-6 text-black border border-black rounded"
+            type="password"
+            name="password"
+            placeholder="password"
+          />
+
+          <button
+            onClick={handleLogin}
+            disabled={!isButtonValid}
+            className="w-full py-3 font-bold text-white transition duration-300 rounded-md bg-gradient-to-br from-blue-900 via-gray-800 to-black hover:bg-slate-100 hover:text-black"
           >
-            Register
-          </a>
-        </p>
+            Login
+          </button>
+
+          <p className="mt-6 text-lg text-center text-black">
+            Don't have an account?{" "}
+            <Link
+              to="/register"
+              className="font-medium text-blue-600 hover:underline hover:text-blue-900"
+            >
+              Register
+            </Link>
+          </p>
+        </div>
       </div>
     </div>
   );
 }
-
 export default LoginPage;

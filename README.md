@@ -1,5 +1,14 @@
 # React + Vite
 
+Daftar Library yang digunakan:
+
+1. React + Vite
+2. Tailwind
+3. FontAwesome
+
+Link Repository GitHub:
+https://github.com/mdintanlestari/Assignment-Day-35---Mini-Project-React
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:

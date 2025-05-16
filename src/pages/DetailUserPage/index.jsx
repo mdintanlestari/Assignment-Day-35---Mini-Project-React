@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 import Breadcrumb from "../../components/breadcrumb";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 function DetailUserPage() {
   const [data, setData] = useState({});
@@ -33,42 +35,67 @@ function DetailUserPage() {
   }, []);
 
   return (
-    <div className="w-screen h-screen bg-slate-400">
-      <Navbar />
-      <h1>Detail User</h1>
-      <Breadcrumb />
-      <div className="grid items-center justify-center my-14">
+    <div className="relative min-h-screen font-poppins">
+      <div
+        className="absolute inset-0 w-full bg-center bg-cover h-min-screen filter blur-md"
+        style={{ backgroundImage: `url(${data.avatar})` }}
+      ></div>
+
+      <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+
+      <div className="relative z-10 px-10 text-white">
+        <Navbar />
         <button
+          className="flex items-center justify-center w-24 gap-2 px-4 py-2 ml-20 -mt-12 font-medium text-center text-black transition duration-300 ease-in-out transform bg-blue-400 border-2 rounded-lg font-poppins hover:bg-stone-500 hover:scale-105"
           onClick={handleBack}
-          className="font-medium text-center text-white bg-black rounded-lg h-7 w-14 -ml-60 hover:bg-gray-600 hover:text-black"
         >
-          Back
+          <FontAwesomeIcon icon={faArrowLeft} /> Back
         </button>
-        <img
-          className="object-cover w-32 h-32 mb-5 rounded-full"
-          src={data.avatar}
-          alt={data.first_name}
-        />
-        <p>First Name: {data.first_name}</p>
-        <p>Last Name : {data.last_name}</p>
-        <p>Email : {data.email}</p>
+        <h1 className="text-4xl font-bold text-center ">Detail User</h1>
+        <div className="ml-20">
+          <Breadcrumb />
+        </div>
+
+        <div className="grid grid-cols-2 mx-20 my-10 text-justify ">
+          <div className="grid items-center justify-center p-4 text-black bg-white border border-gray-200 shadow-md rounded-xl w-72 h-80">
+            <img
+              className="object-cover w-40 h-40 mb-4 ml-4 rounded-lg shadow-sm"
+              src={data.avatar}
+              alt={data.first_name}
+            />
+            <div className="space-y-1 text-center">
+              <p className="text-lg font-semibold">
+                First Name: {data.first_name}
+              </p>
+              <p className="text-lg font-semibold">
+                Last Name: {data.last_name}
+              </p>
+              <p className="text-sm text-gray-600">Email: {data.email}</p>
+            </div>
+          </div>
+
+          <div>
+            <p>
+              {data.first_name} is a dedicated front-end web developer with a
+              strong passion for building responsive, intuitive, and
+              user-centered digital experiences. Proficient in modern
+              technologies such as React, Tailwind CSS, and TypeScript, she
+              excels at translating complex design concepts into clean,
+              maintainable code. Her work is driven by a keen eye for detail and
+              a deep understanding of user interaction, ensuring that every
+              application she builds performs efficiently across devices and
+              platforms. She is also known for her collaborative spirit and
+              commitment to team success—often mentoring junior developers,
+              conducting code reviews, and improving development workflows.
+              Outside of work, Janet actively engages with the tech community by
+              participating in hackathons, attending meetups, and contributing
+              to workshops. Her continuous drive to learn and share knowledge
+              reflects her belief that impactful software is created through
+              curiosity, collaboration, and constant improvement.
+            </p>
+          </div>
+        </div>
       </div>
-      <p className="-mt-12 text-justify mx-80">
-        {data.first_name} is a dedicated front-end web developer with a strong
-        passion for building responsive, intuitive, and user-centered digital
-        experiences. Proficient in modern technologies such as React, Tailwind
-        CSS, and TypeScript, she excels at translating complex design concepts
-        into clean, maintainable code. Her work is driven by a keen eye for
-        detail and a deep understanding of user interaction, ensuring that every
-        application she builds performs efficiently across devices and
-        platforms. She is also known for her collaborative spirit and commitment
-        to team success—often mentoring junior developers, conducting code
-        reviews, and improving development workflows. Outside of work, Janet
-        actively engages with the tech community by participating in hackathons,
-        attending meetups, and contributing to workshops. Her continuous drive
-        to learn and share knowledge reflects her belief that impactful software
-        is created through curiosity, collaboration, and constant improvement.
-      </p>
     </div>
   );
 }

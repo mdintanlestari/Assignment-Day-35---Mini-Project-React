@@ -3,7 +3,7 @@ import LogoutButton from "../LogoutButton";
 
 const Navbar = () => {
   return (
-    <div className="flex gap-5">
+    <div>
       <LogoutButton />
     </div>
   );

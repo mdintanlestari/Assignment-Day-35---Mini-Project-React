@@ -51,10 +51,8 @@ function RegisterPage() {
   return (
     <div className="flex items-center justify-center w-screen bg-cover font-poppins bg-gradient-to-b from-gray-900 to-indigo-950">
       <div className="grid items-center w-full grid-cols-1 md:grid-cols-2">
-        {/* Kiri: Gambar + Welcome */}
         <div className="flex items-center justify-center w-screen min-h-screen md:pl-5 font-poppins bg-gradient-to-b from-gray-900 to-indigo-950">
           <div className="grid w-full max-w-6xl grid-cols-1 overflow-hidden bg-white rounded-md shadow-lg md:grid-cols-2">
-            {/* Kiri: Gambar + Welcome */}
             <div className="relative flex items-center justify-center bg-black">
               <img
                 src={image}
@@ -70,7 +68,6 @@ function RegisterPage() {
               </div>
             </div>
 
-            {/* Kanan: Form Register */}
             <div className="flex flex-col justify-center px-10 py-[35px]">
               <h2 className="mb-6 text-3xl font-medium text-center text-black">
                 Register

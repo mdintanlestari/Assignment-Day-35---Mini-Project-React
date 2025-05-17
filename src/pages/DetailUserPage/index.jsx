@@ -35,9 +35,9 @@ function DetailUserPage() {
   }, []);
 
   return (
-    <div className="relative min-h-screen font-poppins">
+    <div className="relative min-h-screen  font-poppins">
       <div
-        className="absolute inset-0 w-full bg-center bg-cover h-min-screen filter blur-md"
+        className="absolute inset-0 w-full bg-center object-cover bg-cover min-h-screen filter blur-md"
         style={{ backgroundImage: `url(${data.avatar})` }}
       ></div>
 
@@ -46,24 +46,26 @@ function DetailUserPage() {
       <div className="relative z-10 px-10 text-white">
         <Navbar />
         <button
-          className="flex items-center justify-center w-24 gap-2 px-4 py-2 ml-20 -mt-12 font-medium text-center text-black transition duration-300 ease-in-out transform bg-blue-400 border-2 rounded-lg font-poppins hover:bg-stone-500 hover:scale-105"
+          className="flex items-center justify-center w-24 gap-2 px-4 py-2 ml-20 font-medium text-center text-black transition duration-300 ease-in-out transform bg-blue-400 border-2 rounded-lg -mt-11 font-poppins hover:bg-stone-500 hover:scale-105"
           onClick={handleBack}
         >
           <FontAwesomeIcon icon={faArrowLeft} /> Back
         </button>
-        <h1 className="text-4xl font-bold text-center ">Detail User</h1>
+        <h1 className="mt-10 mb-10 text-4xl font-bold text-center md:mb-0 md:mt-0 ">
+          Detail User
+        </h1>
         <div className="ml-20">
           <Breadcrumb />
         </div>
 
-        <div className="grid grid-cols-2 mx-20 my-10 text-justify ">
-          <div className="grid items-center justify-center p-4 text-black bg-white border border-gray-200 shadow-md rounded-xl w-72 h-80">
+        <div className="grid grid-cols-1 mx-5 py-10 text-justify md:mx-20 md:grid-cols-2 ">
+          <div className="grid items-center justify-center p-4 text-black bg-white border border-gray-200 shadow-md md:mb-0 mb-9 rounded-xl w-[360px] md:w-72 md:h-96">
             <img
-              className="object-cover w-40 h-40 mb-4 ml-4 rounded-lg shadow-sm"
+              className="object-cover w-48 h-48 mb-4 object-cover  rounded-lg shadow-sm md:w-full md:h-full "
               src={data.avatar}
               alt={data.first_name}
             />
-            <div className="space-y-1 text-center">
+            <div className=" text-justify">
               <p className="text-lg font-semibold">
                 First Name: {data.first_name}
               </p>

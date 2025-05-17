@@ -1,21 +1,34 @@
-# React + Vite
+# Assignment Day 35 Mini Project
 
-Daftar Library yang digunakan:
+# Deskripsi Project
 
-1. React + Vite
-2. Tailwind
-3. FontAwesome
+    Aplikasi React sederhana untuk mengelola data user menggunakan [Reqres API] (https://reqres.in/). Aplikasi ini mencakup fitur autentikasi (login & register), daftar user dengan pagination, detail user, serta route yang dilindungi (protected routes).
 
-Link Repository GitHub:
+# Library yang digunakan
+
+1. axios -> untuk melakukan HTTP request ke API
+2. react-router-dom -> untuk routing dan navigasi antar halaman
+3. @fortawesome/react-fontawesome -> untuk menampilkan ikon dari FontAwesome
+4. tailwindcss -> untuk styling komponen dengan utility-first CSS
+5. react -> library utama untuk membangun UI
+6. vite -> build tool untuk proyek react
+
+# Fitur Utama
+
+1. Login -> menggunakan endpoint https://reqres.in/api/login` (dengan `x-api-key`).
+2. Register -> menggunakan endpoint `https://reqres.in/api/register` (dengan `x-api-key`).
+3. Daftar User -> dengan pagination
+4. Detail User -> dengan tampilan profil dan deskripsi lengkap
+5. Protected Routes -> hanya bisa diakses setelah login
+6. Navigasi, Breadcrumb dan Tombol Kembali -> untuk kemudahan navigasi
+7. Responsif -> diberbagai ukuran layar
+
+# Fitur Tambahan (diluar requirement utama)
+
+1. Styling dengan Tailwind CSS
+2. Deskripsi dummy user dihalaman detail sebagai tambahan konten
+3. tombol kembaliuntuk UI yang lebih baik
+
+# Link Repository GitHub
+
 https://github.com/mdintanlestari/Assignment-Day-35---Mini-Project-React
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.

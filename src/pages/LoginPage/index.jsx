@@ -40,7 +40,7 @@ function LoginPage() {
       );
       console.log(response);
       setSuccess("Login Success!!");
-      console.log("Token yang disimpan:", response.data.token);
+      console.log(response.data.token);
       localStorage.setItem("token", response.data.token);
 
       setTimeout(() => {
@@ -54,7 +54,6 @@ function LoginPage() {
   return (
     <div className="flex items-center justify-center min-h-screen px-4 bg-gradient-to-b from-gray-900 to-indigo-950 font-poppins">
       <div className="grid w-full max-w-6xl overflow-hidden bg-white rounded-md shadow-lg md:grid-cols-2">
-        {/* Left: Image + Welcome */}
         <div className="relative flex items-center justify-center bg-black">
           <img
             src={image}
@@ -69,7 +68,6 @@ function LoginPage() {
           </div>
         </div>
 
-        {/* Right: Login Form */}
         <div className="flex flex-col justify-center px-6 py-10 md:px-10">
           <h2 className="mb-6 text-3xl font-medium text-center text-black">
             Login

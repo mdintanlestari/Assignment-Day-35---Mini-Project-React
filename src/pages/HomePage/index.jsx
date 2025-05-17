@@ -31,62 +31,61 @@ function HomePage() {
         </div>
         <div className="md:space-y-4 md:mr-16">
           <p className="text-justify md:pt-16">
-            Selamat datang di aplikasi demo Reqres User Portal, sebuah aplikasi
-            berbasis React yang terintegrasi dengan API publik dari Reqres.in.
-            Aplikasi ini menampilkan simulasi sistem autentikasi dan manajemen
-            pengguna dengan fitur-fitur lengkap yang responsif dan aman.
+            Welcome to the Reqres User Portal Demo App, a React-based
+            application integrated with the public API from Reqres.in. This app
+            simulates a user authentication and management system with a
+            complete set of secure and responsive features.
           </p>
-          <h3 className="text-lg font-medium">Fitur Utama:</h3>
+          <h3 className="text-lg font-medium">Key Fitur:</h3>
           <ul className="-pt-5">
             <FontAwesomeIcon icon={faCheckSquare} className="text-green-500" />{" "}
-            <span>Registrasi dan Login pengguna</span>
+            <span>User Registration and Login</span>
             <br />
             <FontAwesomeIcon
               icon={faCheckSquare}
               className="text-green-500"
             />{" "}
-            <span>Menampilkan daftar pengguna</span>
+            <span>Displaying User List</span>
             <br />
             <FontAwesomeIcon
               icon={faCheckSquare}
               className="text-green-500"
             />{" "}
-            <span>Melihat detail setiap pengguna</span>
+            <span>Viewing Individual User Details</span>
             <br />
             <FontAwesomeIcon
               icon={faCheckSquare}
               className="text-green-500"
             />{" "}
-            <span>Navigasi dengan Pagination</span>
+            <span>Pagination for Easy Navigation</span>
             <br />
             <FontAwesomeIcon
               icon={faCheckSquare}
               className="text-green-500"
             />{" "}
-            <span>Proteksi halaman dengan Protected Routes</span>
+            <span>Page Protection with Protected Routes</span>
             <br />
             <FontAwesomeIcon
               icon={faCheckSquare}
               className="text-green-500"
             />{" "}
-            <span>Desain responsif untuk semua perangkat</span>
+            <span>Responsive Design for All Devices</span>
           </ul>
         </div>
-        <div className="text-justify md:space-y-6">
+        <div className="text-justify -mt-14 md:space-y-6">
           <p className="mt-5 text-justify">
-            Aplikasi ini dikembangkan sebagai bagian dari mini project
-            portofolio Front-End Developer menggunakan React.js dan Tailwind
-            CSS.
+            This application was developed as part of a Front-End Developer
+            portfolio mini project using React.js and Tailwind CSS.
           </p>
           <p className="mt-5 text-left">
-            Silahkan{" "}
+            Please{" "}
             <button
               className="w-24 h-8 font-semibold bg-black rounded-md hover:bg-white hover:text-black"
               onClick={handleKlikRegister}
             >
               Register
             </button>{" "}
-            atau{" "}
+            or{" "}
             <button
               className="w-20 h-8 font-semibold bg-black rounded-md hover:bg-white hover:text-black"
               onClick={handleKlikLogin}
@@ -94,7 +93,7 @@ function HomePage() {
               {" "}
               login
             </button>{" "}
-            <span> untuk menjelajahi fitur yang tersedia</span>
+            <span> to explore the available features.</span>
           </p>
         </div>
       </div>

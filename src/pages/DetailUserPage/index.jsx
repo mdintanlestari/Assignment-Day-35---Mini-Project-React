@@ -15,7 +15,7 @@ function DetailUserPage() {
   const getData = async () => {
     try {
       const response = await axios.get(`https://reqres.in/api/users/${id}`, {
-        headers: {
+        headevders: {
           "x-api-key": "reqres-free-v1",
         },
       });

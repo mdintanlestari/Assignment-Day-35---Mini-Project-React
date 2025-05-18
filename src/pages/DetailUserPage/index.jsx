@@ -35,9 +35,9 @@ function DetailUserPage() {
   }, []);
 
   return (
-    <div className="relative min-h-screen  font-poppins">
+    <div className="relative min-h-screen font-poppins">
       <div
-        className="absolute inset-0 w-full bg-center object-cover bg-cover min-h-screen filter blur-md"
+        className="absolute inset-0 object-cover w-full min-h-screen bg-center bg-cover filter blur-md"
         style={{ backgroundImage: `url(${data.avatar})` }}
       ></div>
 
@@ -58,14 +58,14 @@ function DetailUserPage() {
           <Breadcrumb />
         </div>
 
-        <div className="grid grid-cols-1 mx-5 py-10 text-justify md:mx-20 md:grid-cols-2 ">
+        <div className="grid grid-cols-1 py-10 mx-5 text-justify md:mx-20 md:grid-cols-2 ">
           <div className="grid items-center justify-center p-4 text-black bg-white border border-gray-200 shadow-md md:mb-0 mb-9 rounded-xl w-[360px] md:w-72 md:h-96">
             <img
-              className="object-cover w-48 h-48 mb-4 object-cover  rounded-lg shadow-sm md:w-full md:h-full "
+              className="object-cover w-48 h-48 mb-4 rounded-lg shadow-sm md:w-full md:h-full "
               src={data.avatar}
               alt={data.first_name}
             />
-            <div className=" text-justify">
+            <div className="text-justify ">
               <p className="text-lg font-semibold">
                 First Name: {data.first_name}
               </p>
